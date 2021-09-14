@@ -2,17 +2,6 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -24,15 +13,67 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.calendar-container {
+  width: 500px;
+  height: 420px;
+  border-radius: 8px;
+  background-color: #999;;
+  padding: 32px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.calendar-header {
+  display: flex;
+  justify-content: space-around;
+}
+
+.calendar-header:nth-child(2) {
+  flex-grow: 1;
+}
+
+.increment,
+.decrement {
+  cursor: pointer;
+}
+
+.days {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 8px;
+}
+
+.day_of_week {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2em;
+  height: 2em;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.date {
+  border: 1px solid lightgray;
+  width: 2em;
+  height: 2em;
+  line-height: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.date:not(.offset_date) {
+  cursor: pointer;
+}
+.date:hover:not(.offset_date) {
+  background-color: lightskyblue;
+  border: blue;
+}
+
+.selected_date,
+.selected_date:hover {
+  background-color: blue;
+}
+
+.offset_date {
+  border: none;
 }
